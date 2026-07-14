@@ -1,0 +1,173 @@
+:root {
+    --phone-body: #333333;
+    --screen-bg: #9bbc0f;
+    --pixel-on: #0f380f;
+    --pixel-off: #8bac0f;
+    --bezel-color: #555555;
+    --brand-color: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: none;
+}
+
+body {
+    background-color: #e0e0e0;
+    font-family: 'VT323', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.main-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.nokia-phone {
+    background-color: var(--phone-body);
+    width: 320px;
+    height: 600px;
+    border-radius: 30px;
+    padding: 30px 20px;
+    box-shadow:
+        inset 5px 5px 15px rgba(255, 255, 255, 0.1),
+        10px 10px 30px rgba(0, 0, 0, 0.5),
+        -2px -2px 5px rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    border: 4px solid #222;
+    transform-origin: center center;
+}
+
+@media (max-width: 400px) {
+    .nokia-phone {
+        transform: scale(0.85);
+    }
+}
+
+@media (max-height: 650px) {
+    .nokia-phone {
+        transform: scale(0.8);
+    }
+}
+
+.brand-header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.brand-link {
+    color: var(--brand-color);
+    font-size: 24px;
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+}
+
+.brand-link:hover {
+    color: #ffd700;
+}
+
+.screen-bezel {
+    background-color: var(--bezel-color);
+    padding: 15px 15px 30px 15px;
+    border-radius: 10px 10px 25px 25px;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 280px;
+}
+
+.lcd-screen {
+    background-color: var(--screen-bg);
+    width: 100%;
+    height: 340px;
+    border: 2px solid #556210;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'VT323', monospace;
+    color: var(--pixel-on);
+}
+
+.lcd-screen::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.05) 50%);
+    background-size: 100% 2px;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.game-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    border-bottom: 2px solid var(--pixel-on);
+    padding-bottom: 2px;
+    margin-bottom: 2px;
+    z-index: 10;
+}
+
+canvas {
+    image-rendering: pixelated;
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 100%;
+    flex-grow: 1;
+    z-index: 1;
+}
+
+.overlay {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 30px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(155, 188, 15, 0.85);
+    z-index: 20;
+    text-align: center;
+    font-size: 28px;
+    line-height: 1.5;
+}
+
+.hidden {
+    display: none;
+}
+
+.blink {
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}

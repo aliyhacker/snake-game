@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Classic Snake - AliyHacker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="nokia-phone">
+            <div class="brand-header">
+                <a href="https://ozodbekdev.uz" target="_blank" class="brand-link">OZODBEKDEV</a>
+            </div>
+            <div class="screen-bezel">
+                <div class="lcd-screen">
+                    <div class="game-info">
+                        <span id="score-text">BALL: 000</span>
+                        <span id="high-score-text">REKORD: 000</span>
+                    </div>
+                    <canvas id="gameCanvas" width="240" height="320"></canvas>
+                    <div id="start-screen" class="overlay">
+                        <div class="blink">BOSHLASH UCHUN<br>ISTALGAN TUGMANI<br>BOSING</div>
+                    </div>
+                    <div id="game-over-screen" class="overlay hidden">
+                        <div>O'YIN TUGADI</div>
+                        <div id="final-score">BALL: 0</div>
+                        <div class="blink">QAYTA O'YNASH</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
