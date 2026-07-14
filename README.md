@@ -25,7 +25,7 @@ A lightweight interactive web project built with HTML, CSS, and JavaScript.
 Clone the repository:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/interactive-snake.git
+https://github.com/aliyhacker/snake-game.git
 ```
 
 ## Contact Us
