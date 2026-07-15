@@ -27,7 +27,7 @@ let gameLoop = null;
 let speed = 100;
 let lastRenderTime = 0;
 
-highScoreText.innerText = `REKORD: ${highScore}`;
+highScoreText.innerText = `HIGH SCORE: ${highScore}`;
 
 let nextDx = 0;
 let nextDy = 0;
@@ -39,7 +39,7 @@ function initGame() {
         { x: 10, y: 14 }
     ];
     score = 0;
-    scoreText.innerText = `BALL: ${score}`;
+    scoreText.innerText = `SCORE: ${score}`;
     dx = 0;
     dy = -1;
     nextDx = 0;
@@ -95,7 +95,7 @@ function update() {
 
     if (head.x === food.x && head.y === food.y) {
         score += 10;
-        scoreText.innerText = `BALL: ${score}`;
+        scoreText.innerText = `SCORE: ${score}`;
         if (speed > 50) speed -= 1;
         placeFood();
     } else {
@@ -140,9 +140,9 @@ function gameOver() {
     if (score > highScore) {
         highScore = score;
         localStorage.setItem('snakeHighScore', highScore);
-        highScoreText.innerText = `REKORD: ${highScore}`;
+        highScoreText.innerText = `HIGH SCORE: ${highScore}`;
     }
-    finalScoreText.innerText = `BALL: ${score}`;
+    finalScoreText.innerText = `SCORE: ${score}`;
     gameOverScreen.classList.remove('hidden');
 }
 
